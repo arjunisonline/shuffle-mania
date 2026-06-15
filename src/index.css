@@ -38,7 +38,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not(.light) {
     --bg-app: #1c1d1a;
     --bg-card: #363732;
     --text-main: #DCE1E9;
@@ -66,6 +66,35 @@
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -2px rgba(0, 0, 0, 0.2);
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -4px rgba(0, 0, 0, 0.2);
   }
+}
+
+:root.dark {
+  --bg-app: #1c1d1a;
+  --bg-card: #363732;
+  --text-main: #DCE1E9;
+  --text-muted: #9fa4ad;
+  --border-color: #4a4c46;
+  
+  --color-primary: #DCE1E9;
+  --color-primary-hover: #ffffff;
+  --color-primary-bg: rgba(220, 225, 233, 0.08);
+  --color-primary-text: #1c1d1a;
+  
+  --color-accent: #D4AFB9;
+  --color-accent-bg: rgba(212, 175, 185, 0.15);
+  
+  --color-danger: #f87171;
+  --color-danger-hover: #fca5a5;
+  --color-danger-bg: rgba(239, 68, 68, 0.1);
+  
+  --color-success: #34d399;
+  --color-success-bg: rgba(16, 185, 129, 0.1);
+  
+  --border-input: #4a4c46;
+  --border-input-focus: #D4AFB9;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -2px rgba(0, 0, 0, 0.2);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -4px rgba(0, 0, 0, 0.2);
 }
 
 /* --- Base Setup --- */
@@ -292,6 +321,19 @@ input[type="number"] {
   color: #ffffff;
   border-color: var(--color-danger);
 }
+
+.btn-whatsapp {
+  background-color: #25D366;
+  color: #ffffff;
+  border-color: #25D366;
+}
+
+.btn-whatsapp:hover:not(:disabled) {
+  background-color: #1ebe57;
+  border-color: #1ebe57;
+  color: #ffffff;
+}
+
 
 .btn-sm {
   padding: 6px 12px;
@@ -612,4 +654,310 @@ input[type="number"] {
 @keyframes scaleIn {
   from { transform: scale(0.95); opacity: 0; }
   to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* --- Utilities & Custom Classes --- */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.input-desc {
+  font-size: 0.825rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.mb-0 {
+  margin-bottom: 0 !important;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.btn-icon-mr {
+  margin-right: 6px;
+  flex-shrink: 0;
+}
+
+/* Theme Toggle styles */
+.theme-toggle-btn {
+  border: none;
+  background: transparent;
+  color: var(--text-main);
+  box-shadow: none !important;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-toggle-btn:hover {
+  background-color: var(--color-primary-bg) !important;
+}
+
+/* Team split styles */
+.team-split-config {
+  margin-top: 24px;
+  border-top: 1px solid var(--border-color);
+  padding-top: 20px;
+  margin-bottom: 24px;
+}
+
+.team-split-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.checkbox-input {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: var(--color-accent);
+}
+
+.team-count-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+  animation: fadeIn 150ms ease;
+}
+
+.team-count-controls {
+  flex: 1;
+  justify-content: flex-start;
+  gap: 6px;
+}
+
+.btn-adjust {
+  width: 40px !important;
+  height: 40px !important;
+  font-size: 1.25rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.team-count-number-input {
+  max-height: 40px;
+  width: 60px !important;
+  text-align: center;
+  margin: 0 4px;
+  padding: 6px !important;
+  font-family: var(--font-mono);
+}
+
+.btn-shuffle {
+  padding: 12px 20px;
+  font-size: 0.95rem;
+}
+
+/* Results section styling */
+.card-results {
+  animation: fadeIn 200ms ease;
+}
+
+.card-header-results {
+  margin-bottom: 16px;
+}
+
+.results-subtext {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.teams-results-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 16px;
+  margin-bottom: 24px;
+}
+
+.team-result-card {
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  background-color: var(--bg-app);
+}
+
+.team-result-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 8px;
+}
+
+.team-result-title {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--color-primary);
+}
+
+.team-result-count {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.team-result-players {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.team-result-player-item {
+  display: flex;
+  align-items: center;
+  font-size: 0.95rem;
+}
+
+.team-result-player-rank {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  width: 25px;
+}
+
+.team-result-player-name {
+  font-weight: 500;
+}
+
+.btn-action {
+  flex: 1;
+}
+
+.toast-icon-success {
+  color: var(--color-success);
+  flex-shrink: 0;
+}
+
+/* Micro-animations & interactive states */
+.btn:active:not(:disabled) {
+  transform: scale(0.98);
+  filter: brightness(0.95);
+}
+
+/* --- Mobile Responsiveness and Touch Optimization --- */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+  }
+
+  .main-content {
+    padding: 16px 12px 100px 12px; /* Additional bottom padding to account for sticky button */
+  }
+
+  .card {
+    padding: 18px;
+    border-radius: var(--radius-md);
+    margin-bottom: 16px;
+    box-shadow: var(--shadow-sm);
+  }
+
+  /* Sticky floating main button on mobile */
+  .btn-shuffle {
+    position: fixed;
+    bottom: 16px;
+    left: 16px;
+    right: 16px;
+    z-index: 100;
+    width: calc(100% - 32px) !important;
+    box-shadow: var(--shadow-lg);
+    border-radius: var(--radius-md);
+    bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+    height: 48px;
+    font-size: 1rem;
+    background-color: var(--color-primary);
+    color: var(--color-primary-text);
+  }
+
+  /* Ensure inputs have comfortable touch targets */
+  input[type="text"],
+  input[type="number"] {
+    height: 46px;
+    font-size: 1rem;
+    padding: 10px 12px;
+  }
+
+  /* Player inputs rows on mobile */
+  .player-input-row {
+    gap: 8px;
+  }
+
+  .player-index {
+    height: 46px;
+    width: 24px;
+  }
+
+  .player-input-list {
+    max-height: 280px;
+    gap: 8px;
+  }
+
+  /* Increase icon buttons sizing for tap target accessibility (>= 44x44px) */
+  .btn-icon-only.btn-danger {
+    width: 46px;
+    height: 46px;
+  }
+
+  .btn-adjust {
+    width: 44px !important;
+    height: 44px !important;
+  }
+
+  .team-count-number-input {
+    max-height: 44px;
+    font-size: 1rem;
+  }
+
+  /* Bottom sheet behavior for modals on mobile */
+  .modal-overlay {
+    align-items: flex-end;
+    padding: 0;
+  }
+
+  .modal-content {
+    max-width: 100%;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: var(--radius-lg);
+    border-top-right-radius: var(--radius-lg);
+    padding: 24px 20px;
+    max-height: 85vh;
+    animation: slideUp var(--transition-speed) ease-out;
+  }
+
+  .modal-body {
+    max-height: 50vh;
+  }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
 }
