@@ -818,21 +818,31 @@ export default function App() {
 
       {/* --- Footer --- */}
       <footer className="footer">
-        <div>&copy; 2026 Shufflemania. All rights reserved.</div>
+        <div className="footer-credit">
+          Made with ❤️ by{" "}
+          <a
+            href="https://arjunisonlinee.in"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer-link footer-link-accent"
+          >
+            arjunisonlinee.in
+          </a>
+        </div>
         <div className="footer-links">
           <button
             type="button"
             className="footer-link"
             onClick={() => setActiveModal("privacy")}
           >
-            Privacy Policy
+            Privacy
           </button>
           <button
             type="button"
             className="footer-link"
             onClick={() => setActiveModal("terms")}
           >
-            Terms & Conditions
+            Terms
           </button>
         </div>
       </footer>

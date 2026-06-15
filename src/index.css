@@ -568,6 +568,31 @@ input[type="number"] {
   text-decoration: underline;
 }
 
+.footer-credit {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.footer-link-accent {
+  color: var(--color-accent);
+  font-weight: 600;
+  text-decoration: none;
+  background: none;
+  border: none;
+  font-size: inherit;
+  font-family: var(--font-sans);
+  cursor: pointer;
+  padding: 0;
+}
+
+.footer-link-accent:hover {
+  text-decoration: underline;
+  color: var(--color-accent);
+}
+
 /* --- Modal Overlay & Content --- */
 .modal-overlay {
   position: fixed;
